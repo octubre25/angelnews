@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		{% block titulo %}Noticias{% endblock %}
+	</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body class="bg-light" style="background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEhIVFRUVFRUVFRUVFRUVFRUVFRUWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFw8PFysdFR0tLS0rLS0tLS0rLS0rKy0tLS0tLS0tLS0tLS0tLS0tLTcrLS0tLS03Kzc3NzctKy0rN//AABEIALcBEwMBIgACEQEDEQH/xAAZAAADAQEBAAAAAAAAAAAAAAAAAQIDBAf/xAAhEAEBAQEBAQABBAMAAAAAAAAAAQIREiFRA0GB8BMxwf/EABgBAQEBAQEAAAAAAAAAAAAAAAECAAMF/8QAGREBAQEBAQEAAAAAAAAAAAAAAAEREgJB/9oADAMBAAIRAxEAPwDyqnwuKkeg8wcO5EUrBqMxcyeYvLSJtZ3JcaUi2o8ji+HxsbUcRY2sTw40qZD8tJkrDjai5PybSRsFrPym5bcS2NKjyLhp5VxuW6YzLK4dVnxHBYZ6YeRcteC5HKumPC408jgw6yuU2NuFrAsPTLhyLmFTLYemVymxtxGoLGlZ8aRCxDTANSTkXIVONE04uQsxfFRFpcORVEisTqbkrGshcONrKRcyqReTIL6ZWCRtcp8nB0lGo18lxjKzkVmLmTmGwWl5Lyvh8ODWcg1F/f8ARXIOsk8bQrkYdZZFiuBlajieNKQsOpmTuVw+Ng1lwrGlibBYZWOmeo2sRXOx0lZcNVieJXp+gVoZnRRIdhyLcTyuUZPi5EUWHmDjSZVIm0vI4rg4rE6ni8xUyOcbBqR5NWSNRYPKuHlm1MiswRXlhqPCplUyqT5/M/6cGs/KdRrIm5bGlYeRY11lFwMXKxpWNrhFicXKz4FDgxWlmmPJSkCxNioNAsrlFjWxO0WLlY1NjTUTqIsXKiwHwwrXRoQrTjpHFpDhSLkXiKci8wsxcVHO0DMFGSDpVUg1KwQvMRFys1Pn0+DN+HxSdPOO/urwMxXOMnSyLn8U7R0hJXJ081iz4ixtqI1BYqVke5+51N/CVMrCq+FqDHTWdhLsT5CpSkGj6UoYtJsVYngqojWWeo11GekVcRwH0JW2kVISsx1jjWmI0iMxpFxyp5OxPVsmpoOnwtogtPiSBGmZGXWmazVeeKiOqmjEVZVPRq/OkYLRmosXljTpC1PWGLgqekzYWp1nY2kZ7ibFyosIxApNRWvIjQqpUyFyK4mhQLyJRaCzsZ/qZbWs91Ni5WXCUTm6Nlysc1eXSOdjeLlZZWtysWpMpwxFVIfEyq6QaeGeSE8Vw+jrNol4IlRCtb/v8I6CjFRxNqenRi0VWRwEQdHCDLZ7quo1W1pE0pQQqz1ounU2Ap0S+ooVALRBYzM9RPFcEjnVp/xBf38gNtc+W2WcjXOVRXppleUcXlblV2n6EOQ45hfEKyYKfkH0tUpKgQVic4qszOtgLhw4zFSVRIG0gdhWMyadHD4Cm7SqxNYlw+CH1imlaq1Apiamr0gKg6aRqjSVg1+S9F6TVYcAlAZjlpGearrRdbTTTNYytY6RysaZaVlKvqnOw4qQunWTThWhNjNFBPB0sdgBswVEn1gZpB0YdhDpBjpUF1iKji0hUKgoVoJ60jo0gaqRVqepHQqQ+CwupuhSKVhUrpC8VIbPoZsZZrXNYyq9CV0sdE2uVhmtZXSVysa9+q6xladU52Ly0zWMq/RTY2lK1E0LTqcURCFjMQMDipEKtYFaaKbHDLpAMLSpkxFqF1NBhDpWldBWFup6NFAqQVJ2DgJVC6jVTVQrWd0d0zqLXSRc/UDIDVcwKiDlaU42lXNMZVRcqLG+avNY5qpVyudjaKtZZ0uqRYrpzTLp9bRjXp9R0WkY0zpVZTSs6OpsaQJlDJxRdHU2scUOptLrNiujqPRdGnFWlU2k2qw6lbOimEZK6FEQ6m0MNIp6qNJq5E1npekOddIXAAFFwqqprE81eGcXNGCtofWforp01zxtKr055tfWlF8tOqlZTR9OjG00drGaO6VqeWkq4yml4rQWNJTtZ+k3Z1PLS6Hpj6POm08tbouo9FNDW5V1URND0WxVL0i6R7Fqp5bekWp6JptOKlHU9Hoa2HaVpWpuk2mQ9ItF0nVTaqQaTTqOJXADkAOki0BqYM1UoAlNiujoCkl1coBaqHQFJHs7ogNbDm2k18MGVPqF7L2AdbE+lzYA1rE+h7AbWw/R+gDoxNpWkAYJpVALFaXogLTIPSbTCNOJ1R0Bj8VBwBgqZACsTr//2Q==') ;">
+	<div id="header" class="bg light py-2 " style="background-image:url(https://i.pinimg.com/originals/06/55/80/065580938b36e4c049ec033745248216.jpg);">
+		<!--
+			h1 (h = header) es igual a encabezado uno
+			display mostrar - tamaño
+		-->
+		<a href="{% url 'blog:listar_noticias' %}" class="text-secondary">
+			<h1 class="display-3 text-center">
+		<h1 class="display-3 text-center  text-light">
+		Angel<b><i>News</i></b></h1>
+	</div>
+
+	<div class="container bg-light" id="principal">
+		{% block informacion %}
+
+		{% endblock %}
+	</div>
+	<footer id="sticky-footer" class="py-4 bg dark text-white 50">
+		<div class="container text-center">
+			<small>
+				Todos Los Derechos Reservados &copy; Angel News
+			</small>
+		</div>
+	</footer>s
+</body>
+</html>

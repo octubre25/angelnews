@@ -1,0 +1,22 @@
+<!--Extiende la configuracion y maquetacion de la pagina base-->
+{% extends 'base.html' %}
+
+
+{% block titulo %}
+	{{ noticia.titulo }}
+{% endblock %}
+
+
+<!--
+	Pasa la informacion que va a ser mostrada en el bloque
+	informacion de la pagina base.html
+-->
+{% block informacion %}
+
+	<h1>{{ noticia.titulo }}</h1>
+
+	<p>{{ noticia.descripcion }}</p>
+	<div class="text-secondary">
+		 Publicacion: {{ noticia.fecha_pub }}
+	</div>
+{% endblock %}
