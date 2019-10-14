@@ -7,7 +7,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 #Template
 #Importaciones de Librerias Personales
 from . import models
-
+from . import forms
 
 def listar_noticias(request):
 	"""
@@ -50,3 +50,40 @@ def ver_noticia(resquest, id_noticia):
 						"./noticias/detalle.html",
 						{"noticia":noticia}
 					)
+
+
+
+def agregar_noticias(resquest):
+	"""
+		Agrega una nueva noticia a la base de datos 
+
+		Retorna
+				al sitio principal de noticia
+	"""
+
+	if resquest.method == "post":
+		#crea un formularionuevo con el metodo post
+		form = forms.NuevaNoticiaForm(resquest.POST)
+
+		if forms.is_valid():
+			#si el formulario es valido se procede con el proceso 
+			#de agregar el nuevo registro a la base de datos
+			noticia = models.Noticia()
+			noticia.titulo = forms.cleaned_data['titulo']
+			noticia.descripcion = form.cleaned_data['descripcion']
+			noticia.save()
+
+			#Redireacciona a la pagina principal
+			return HttpResponseRedirect(
+							render(
+									'blog:listar_noticias'
+									)
+							)
+		else:
+			return HttpResponse("Formulario invalido")
+		#si el metodo de petecion no es agregar
+		#se carga el formulario desde cero
+		else:
+			forms.NuevaNoticiaForm()
+
+		return render (resquest, './noticias/agregar.html', {'form':form})
